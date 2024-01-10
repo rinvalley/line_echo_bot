@@ -50,6 +50,8 @@ def generate_responese(from_user, text):
     elif"何時" in text or "なんじ" in text:
         now=datetime.datetime.now()
         res.append(TextMessage(text=f"今は{now.hour}時{now.minute}分ですよ"))
+    elif "疲れた" in text or "つかれた" in text:
+        res.append(TextMessage(text="おつかれ！"))
     else:
         res.append(TextMessage(text=f"「{text}」ってなに？"))
     return res
