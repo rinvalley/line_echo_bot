@@ -39,6 +39,7 @@ def callback():
 
     return "OK"
 
+import datetime
 def generate_responese(from_user, text):
     res = []
     res.append(TextMessage(text=f"おー{from_user}さん！"))
@@ -46,6 +47,9 @@ def generate_responese(from_user, text):
         res.append(TextMessage(text="こんにちは"))
     elif"おは" in text:
         res.append(TextMessage(text="おはよう"))
+    elif"何時" in text or "なんじ" in text:
+        now=datetime.datetime.now()
+        res.append(TextMessage(text=f"今は{now.hour}時{now.minute}分ですよ"))
     else:
         res.append(TextMessage(text=f"「{text}」ってなに？"))
     return res
