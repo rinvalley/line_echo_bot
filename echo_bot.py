@@ -44,6 +44,8 @@ def generate_responese(from_user, text):
     res.append(f"おー{from_user}さん！")
     if "こん" in text:
         res.append("こんにちは")
+    elif"おは" in text:
+        res.append("おはよう")
     else:
         res.append(f"「{text}」ってなに？")
     return res
