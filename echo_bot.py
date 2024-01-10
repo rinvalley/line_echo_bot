@@ -47,7 +47,7 @@ def generate_responese(from_user, text):
     elif"おは" in text:
         res.append(TextMessage(text="おはよう"))
     else:
-        res.append(TextMessage(text="「{text}」ってなに？"))
+        res.append(TextMessage(text=f"「{text}」ってなに？"))
     return res
 
 @handler.add(MessageEvent, message=TextMessageContent)
